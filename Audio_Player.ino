@@ -1,11 +1,14 @@
 void playFirst()
 {
+  //sending initializing parameters
   df_CMD(0x3F, 0, 0);
   delay(500);
   setVolume(30);
   delay(500);
+  //stopping the repeat play
   df_CMD(0x11,0,0); 
   delay(500);
+  //pause
   df_CMD(0x0E,0,0);
   delay(500);
 }
@@ -24,6 +27,7 @@ void play()
 
 void selectTrack(int number)
 {
+  //number indicated the file name of the audio files in SD card
   df_CMD(0x03,0,number);
   delay(500);
 }
